@@ -40,7 +40,7 @@ void introStrings() {
 }
 
 void typeInterferances() {
-  var movieTitle = 'Pulp Fictions';
+  var movieTitle = 'Pulp Fiction';
   // runtimeType is checking the type of the variable on runtime
   print(movieTitle.runtimeType);
 
