@@ -1,5 +1,6 @@
 import 'dart:io';
 
+// Functions containing learning code (not doing much)
 void introVariables() {
   String? name = stdin.readLineSync();
   print('Hello $name');
@@ -81,13 +82,74 @@ void constantsAndFinal() {
   print(bobAge);
 }
 
-void operators(){
-  
+void arithmeticOp() {
+  // Arithmetic operations -> + - * / ~/ % -expr
+  var operand1 = 20;
+  var operand2 = 8;
+
+  print(operand1 + operand2);
+  print(operand1 - operand2);
+  print(operand1 * operand2);
+  print(operand1 / operand2);
+  print(operand1 ~/ operand2); // division resulting with an integer
+  print(operand1 % operand2);
+  print(-operand1);
+
+  // Prefix & suffix assignement -> ++value first increments the initial value and then is assigned. value++ is first assigned AND after that it's incrementing.
+  var a = 5;
+  print('Initial value of a: $a');
+  var b = a++; // suffix
+
+  print('Initial value of a after assigning b: $a');
+  print('Value of b with a suffix: $b');
+
+  var c = 9;
+  print('Initial value of c: $c');
+  var d = ++c; //prefix
+
+  print('Initial value of c after assigning d: $c');
+  print('Value of d with a prefix: $d');
 }
 
+void typeTestOp() {
+  // Type test operators -> as, is, is! Return a boolean value if the value is or is! not the desired type
+  String word = 'hello';
+  int numberTest = 22;
+  double smolNum = 2.9;
+  bool amIDumb = true;
+
+  print(word is String);
+  print(numberTest is int);
+  print(smolNum is double);
+  print(amIDumb is bool);
+  print(word is! double);
+}
+
+void bitwiseAndShiftOp() {
+  // Those only work on binary numbers so there is no true or false but 1 or 0
+  // Bitwise operators -> & = AND, | = OR, ^ = XOR, ~ = unary bitwise (if bit is 1 then it becomes 0)
+  // shift operators -> >> = shift all bits to the left , << = shift all bits to the right
+
+  var A = 12;
+  var B = 5;
+
+  print(~A); // A complement
+  print(~B); // B complement
+  print(A & B); // A AND B
+  print(A | B); // A OR B
+  print(A ^ B); // A XOR B
+  print(B << 2); // B shifts all bits to the left 2
+  print(A >> 2); // A shifts all bits to the right 2
+}
+
+void tempConversion() {
+  double fahrenheit = 50.0;
+  num celsius = ((fahrenheit - 32) * 5) / 9;
+  print(celsius);
+}
+
+// Functions doing really something lol
+
 void main() {
-  //introVariables();
-  //introStrings();
-  //typeInterferances();
-  //constantsAndFinal();
+  bitwiseAndShiftOp();
 }
