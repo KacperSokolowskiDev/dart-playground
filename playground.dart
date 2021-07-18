@@ -67,8 +67,27 @@ void typeInterferances() {
   print('The value is $crazyVar and the type is ${crazyVar.runtimeType}');
 }
 
+void constantsAndFinal() {
+  // Compile time -> Values that are defined and not changed during compilation (int, double variables,... defined in the source code.)
+  // Run time -> Values that can't be determined until the run time of the code (user input,...)
+  // Never changing variables :
+
+  // final keyword -> The variable is initialized the first time it's used and can be set only once. final value will be known at runtime !!
+  final person = stdin.readLineSync();
+  print('Hello $person');
+
+  // const keyword -> Like the final keyword, the const keyword is set only once when you know the value at compile time ! And cannot be reassigned.
+  const bobAge = 22;
+  print(bobAge);
+}
+
+void operators(){
+  
+}
+
 void main() {
-  introVariables();
-  introStrings();
-  typeInterferances();
+  //introVariables();
+  //introStrings();
+  //typeInterferances();
+  //constantsAndFinal();
 }
