@@ -197,8 +197,28 @@ void testingSets() {
   print(unionSet);
 }
 
+void testingMaps() {
+  var simpleMap = {'a': 1, 'b': 2, 'c': 3}; // => Map<int,String>
+  print(simpleMap);
+
+  var numbers = Map<int, String>(); // constructor
+  numbers[1] = 'hello';
+  numbers[2] = 'bye';
+  numbers[3] = 'yo';
+  numbers[4] = 'sayonara';
+  print(numbers);
+  print(numbers[1]);
+  print(numbers.length);
+  print(numbers.containsKey(1));
+
+  var allValues = numbers.values; // same for keys
+  print('Values: $allValues');
+
+  numbers.remove(1); // removes the key & the value
+}
+
 // Functions doing really something lol
 
 void main() {
-  testingSets();
+  testingMaps();
 }
