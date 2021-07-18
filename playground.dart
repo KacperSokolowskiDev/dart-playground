@@ -148,8 +148,57 @@ void tempConversion() {
   print(celsius);
 }
 
+void testingLists() {
+  var foods = ['apple', 'carrot', 'potato'];
+  foods.add('curry');
+  print(foods);
+
+  var lovedFoods = foods
+      .map((food) => 'I love $food')
+      .toList(); // mapping through a list and doing something, toList changes it back to a list
+  print(lovedFoods);
+
+  List<int> numArray = [1, 2, 3];
+  numArray.addAll([4, 5]);
+  numArray.removeAt(1);
+  print(numArray);
+  print(numArray.length);
+  numArray.clear(); // deleting all elements
+}
+
+void testingSets() {
+  // Sets don't have duplicates
+  var simpleSet = {1, 2, 3}; // => Set<int>
+  print(simpleSet);
+  var setOfNumbers = <num>{1, 2, 3, 4, 5};
+  print(setOfNumbers);
+  Set<String> words = {'angus', 'manga', 'movies'};
+  print(words);
+
+  var fruits = <String>{};
+  fruits.add('banana');
+  fruits.add('apple');
+  fruits.add('orange');
+  fruits.addAll(['grape', 'lichi']);
+  fruits.remove('grape');
+  print(fruits);
+
+  print(fruits.contains('ananas'));
+  print(fruits.containsAll(['banana', 'apple', 'orange']));
+
+  Set<String> fruitBasket = {'apple', 'orange', 'watermelon', 'grapes'};
+
+  var intersectionSet = fruits.intersection(
+      fruitBasket); // contains all the values that are present in both of those sets
+  print(intersectionSet);
+
+  // this set contains all the values that appear at least once in each set
+  var unionSet = fruits.union(fruitBasket);
+  print(unionSet);
+}
+
 // Functions doing really something lol
 
 void main() {
-  bitwiseAndShiftOp();
+  testingSets();
 }
