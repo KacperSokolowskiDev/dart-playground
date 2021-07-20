@@ -217,8 +217,56 @@ void testingMaps() {
   numbers.remove(1); // removes the key & the value
 }
 
+void testingForLoops() {
+  var paintCatalogues = ['blue', 'green', 'red', 'yellow', 'white'];
+  for (var i = 0; i < paintCatalogues.length; i++) {
+    print(paintCatalogues[i]);
+  }
+
+  var numList = [1, 2, 3, 4, 5, 6];
+  for (var num in numList) {
+    print(num);
+  }
+
+  var evenList = [];
+  for (var i = 0; i < numList.length; i++) {
+    numList[i] = numList[i] * 3;
+    if (numList[i] % 2 == 0) {
+      evenList.add(numList[i]);
+    }
+  }
+  print(evenList);
+}
+
 // Functions doing really something lol
 
+String hello(String name) {
+  return 'Hello $name';
+}
+
+num sum(num x, num y) => x + y;
+
+// optional named parameters in {}
+printer(num n, {String? s1, String? s2}) {
+  print(n);
+  print(s1);
+  print(s2);
+}
+
+// optional positional parameters in [] must be used in the way they were declared (first who, what and then where)
+String mysteryMessage(String who, [String? what, String? where]) {
+  var message = '$who';
+  if (what != null && where == null) {
+    message = '$message said $what';
+  } else if (where != null) {
+    message = '$message said $what at $where';
+  }
+  return message;
+}
+
 void main() {
-  testingMaps();
+  print(hello('Gats'));
+  print(sum(2, 3));
+  printer(3, s1: 'hello', s2: 'there');
+  print(mysteryMessage('Rick', 'fuck you', 'the school'));
 }
