@@ -264,9 +264,64 @@ String mysteryMessage(String who, [String? what, String? where]) {
   return message;
 }
 
+// higher order functions
+List<int> forAll(Function f, List<int> intList) {
+  List<int> newList = [];
+  for (var i = 0; i < intList.length; i++) {
+    newList.add(
+        f(intList[i])); // calls factorial function for each element in intList
+  }
+  return newList;
+}
+
+// nested functions, functions defined in other functions
+void outerFunction() {
+  print('outer Function');
+  void nestedFunction() {
+    print('nested Function');
+  }
+
+  nestedFunction();
+}
+
+int mainMax(int a, int b, int c) {
+  int max(int x, int y) {
+    if (x > y) {
+      return x;
+    } else {
+      return y;
+    }
+  }
+
+  return max(a, max(b, c));
+}
+
+// recursive functions
+int factorial(int x) {
+  if (x == 1) {
+    return 1;
+  } else {
+    return x * factorial(x - 1);
+  }
+}
+
+int sumRecursive(List<int> numberList, int index) {
+  if (index < 0) {
+    return 0;
+  } else {
+    return numberList[index] + sumRecursive(numberList, index - 1);
+  }
+}
+
 void main() {
-  print(hello('Gats'));
-  print(sum(2, 3));
-  printer(3, s1: 'hello', s2: 'there');
-  print(mysteryMessage('Rick', 'fuck you', 'the school'));
+  // anonymous functions or lambda or closures
+  var tester = [1, 2, 3];
+  var testList = [12, 18, 22];
+  tester.forEach(
+      print); // passing print function as parameter to the built-in method for-each
+  testList.forEach((element) {
+    print('The value is $element');
+  });
+
+  print(mainMax(3, 12, 9));
 }
