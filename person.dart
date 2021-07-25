@@ -25,7 +25,7 @@ class Person {
     }
   }
 
-  // instance methods (also called members) can access instance variables
+  // instance methods can access instance variables
   talking() => print("$name is talking.");
   description() => print(
       'This person is a $gender, and ${gender == 'male' ? 'his' : 'her'} name is $name. ${gender == 'male' ? 'He' : 'She'} is $age years old.');
